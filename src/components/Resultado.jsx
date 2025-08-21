@@ -61,7 +61,6 @@ function Resultado({resultado}){
                 <tbody className="tabelaBody">
                     <tr>{TabelaImc(resultado)}</tr>
                 </tbody>
-
             </table>
         </div>
     )

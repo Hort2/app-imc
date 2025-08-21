@@ -1,6 +1,5 @@
 import '../css/global.css'
-import '../css/resultado.css'
-
+import '../css/header.css'
 
 function Header(){
     return(
@@ -9,5 +8,4 @@ function Header(){
         </div>
     )
 }
-
 export default Header
