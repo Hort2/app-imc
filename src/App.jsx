@@ -1,5 +1,6 @@
 import {useState,useEffect} from "react"
 import Header from "./components/Header"
+import Resultado from "./components/Resultado"
 import "./css/global.css"
 import "./css/estilo.css"
 
@@ -12,15 +13,15 @@ function App() {
   const [resultado,setResultado]=useState(0);
   const [mostrarresultado, setMostrarResultado]=useState(false)
 
-  //funcao calcular imc
+  //FUNÇÃO CALCULAR IMC
   const calcularImc=()=>{
     const imc = peso /(altura*altura)
     return setResultado(imc.toFixed(2))
+
   }
   useEffect(()=>{
-    resultado > 0 ? setMostrarResultado(true) : setMostrarResultado(false)
+   resultado > 0 ? setMostrarResultado(true) : setMostrarResultado(false)  
   },[resultado])
-
 
  
 
@@ -45,7 +46,11 @@ function App() {
       <button onClick={calcularImc}>Calcular</button>
      </form>
     </div>
+    {/* MOSTRA O RESULTADO AO DIGITAR A ALTURA E O PESO */}
+    {mostrarresultado && (
 
+      <Resultado resultado={resultado}/>
+    )}
     </div>
 
   )
